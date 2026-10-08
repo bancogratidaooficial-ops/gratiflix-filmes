@@ -2,161 +2,125 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GRATIFLIX TV - FINAL</title>
+<title>GRATIFLIX - Filmes, Séries e Lições de Gratidão</title>
+<meta name="description" content="Gratiflix - Trailers oficiais, desenhos liberados e lições de gratidão dos grandes filmes.">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#0f1115;color:#fff;font-family:Arial;padding-bottom:130px}
-.top{position:fixed;top:0;width:100%;background:#0f1115;z-index:100;padding:10px 3%;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f5c518}
-.top input{flex:1;background:#1e2128;border:none;padding:12px 14px;border-radius:20px;color:#fff}
-.ganhe{background:#1e2128;border-radius:20px;padding:6px 12px;display:flex;align-items:center;gap:6px;font-size:11px;font-weight:800;color:#f5c518;cursor:pointer}
-.tabs{margin-top:58px;display:flex;gap:20px;padding:10px 3%;background:#0f1115;position:fixed;width:100%;z-index:90;overflow-x:auto}
-.tabs span{color:#888;font-weight:800;white-space:nowrap;cursor:pointer}.tabs span.ativo{color:#fff;border-bottom:3px solid #f5c518}
-.banner{height:300px;position:relative;background:#000;overflow:hidden;margin-top:100px}
-.banner img{width:100%;height:100%;object-fit:cover;opacity:.6}
-.banner-info{position:absolute;bottom:20px;left:3%;right:3%}
-.banner-info h1{font-size:32px;font-family:serif;color:#e8c36a}
-.btn-assistir{margin-top:12px;background:#000;border:1px solid #e8c36a;color:#fff;padding:12px 30px;border-radius:30px;font-weight:900;cursor:pointer}
-.titulo-plug{background:#000;padding:10px 3%;text-align:center;border-bottom:2px solid #f5c518}
-.titulo-plug h2{font-size:18px}.titulo-plug p{font-size:12px;color:#aaa}
-.pastas{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 3%}
-.pasta-card{background:#1e2128;border-radius:14px;padding:14px;position:relative;border:1px solid #2a2e39}
-.pasta-card h3{font-size:16px;margin:8px 0}.pasta-card.count{font-size:12px;color:#aaa}
-.pasta-card.lixeira{position:absolute;top:10px;right:10px;background:#e50914;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.btn-abrir{margin-top:10px;background:#ffcc00;color:#000;border:none;width:100%;padding:10px;border-radius:20px;font-weight:900;cursor:pointer}
-.row-title{display:flex;justify-content:space-between;padding:16px 3% 8px;font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0f1115;color:#fff;font-family:Arial;padding-bottom:80px}
+.top{position:fixed;top:0;width:100%;background:#0f1115;z-index:100;padding:10px 3%;display:flex;gap:10px;align-items:center;border-bottom:2px solid #f5c518}
+.top b{color:#f5c518}.top input{flex:1;background:#1e2128;border:none;padding:11px 14px;border-radius:20px;color:#fff}
+.tabs{margin-top:60px;display:flex;gap:18px;padding:10px 3%;background:#0f1115;overflow-x:auto;border-bottom:1px solid #222}
+.tabs span{color:#888;font-weight:800;cursor:pointer;white-space:nowrap}.tabs span.ativo{color:#fff;border-bottom:3px solid #f5c518}
+.banner{height:320px;position:relative;background:#000;overflow:hidden}
+.banner img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.banner-info{position:absolute;bottom:18px;left:3%;right:3%}
+.banner-info h1{font-size:32px;color:#e8c36a;font-family:serif}
+.btn{margin-top:10px;background:#f5c518;color:#000;border:none;padding:11px 26px;border-radius:30px;font-weight:900;cursor:pointer}
+.pastas{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 3%}
+.pcard{background:#1e2128;border-radius:12px;padding:12px;border:1px solid #2a2e39;text-align:center}
+.row-title{padding:16px 3% 6px;font-weight:800;display:flex;justify-content:space-between}
 .row{display:flex;gap:10px;overflow-x:auto;padding:0 3% 10px}
-.card{min-width:145px;max-width:145px;position:relative;border-radius:8px;overflow:hidden;background:#1a1d24}
-.card img{width:100%;height:200px;object-fit:cover;cursor:pointer}
-.card.tag{position:absolute;top:6px;right:6px;background:#1e90ff;font-size:8px;padding:2px 4px;border-radius:3px;font-weight:900}
-.card.nota{position:absolute;bottom:32px;right:6px;color:#f5c518;font-weight:900;font-size:12px}
-.card.nome{padding:6px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.botoes{display:flex;background:#000;border-top:1px solid #222}.botoes span{flex:1;text-align:center;padding:7px 0;font-size:12px;cursor:pointer}
-.admin-bar{position:fixed;bottom:55px;width:100%;background:#0f1115;display:flex;gap:6px;padding:8px 3%;overflow-x:auto;border-top:1px solid #222;z-index:99}
-.admin-bar button{border:none;padding:8px 12px;border-radius:20px;font-weight:900;font-size:10px;white-space:nowrap;cursor:pointer}
-.bottom{position:fixed;bottom:0;width:100%;background:#15171d;display:flex;justify-content:space-around;padding:8px 0;border-top:1px solid #222;z-index:100}
-.bottom div{text-align:center;color:#666;font-size:11px;cursor:pointer}.bottom div.ativo{color:#f5c518}
+.card{min-width:148px;max-width:148px;background:#1a1d24;border-radius:8px;overflow:hidden;position:relative}
+.card img{width:100%;height:210px;object-fit:cover;cursor:pointer}
+.tag{position:absolute;top:6px;right:6px;background:#007feb;font-size:9px;padding:3px 5px;border-radius:4px;font-weight:900}
+.nota{position:absolute;bottom:36px;right:6px;color:#f5c518;font-weight:900;font-size:11px}
+.nome{padding:7px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ads{background:#15171d;border:1px dashed #333;margin:12px 3%;padding:18px;text-align:center;color:#666;font-size:12px;border-radius:8px}
+footer{background:#000;margin-top:20px;padding:20px 3%;font-size:11px;color:#aaa;text-align:center;line-height:1.6}
+footer a{color:#f5c518;text-decoration:none;margin:0 6px}
 #player{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;display:none}#player iframe{width:100%;height:100%;border:none}
-#modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:10000;display:none;align-items:center;justify-content:center;padding:10px}
-.box{background:#1e2128;border-radius:12px;padding:14px;width:100%;max-width:500px;border:1px solid #333;max-height:90vh;overflow:auto}
-.box input,.box textarea{width:100%;padding:10px;border-radius:8px;border:none;background:#0f1115;color:#fff;margin-bottom:6px}
+.bottom{position:fixed;bottom:0;width:100%;background:#15171d;display:flex;justify-content:space-around;padding:8px 0;border-top:1px solid #222;z-index:100}
+.bottom div{text-align:center;color:#666;font-size:11px}.bottom div.ativo{color:#f5c518}
 </style>
 </head>
 <body>
-<div class="top">
-<input id="busca" placeholder="🔍 Buscar..." oninput="filtrar()">
-<div class="ganhe" onclick="convidar()">🪙 Ganhe<br>Dinheiro</div>
-</div>
+<div class="top"><b>GRATIFLIX</b><input id="busca" placeholder="🔍 Buscar trailer, lição..." oninput="filtrar()"></div>
 <div class="tabs">
-<span class="ativo" id="tabInicio" onclick="voltarInicio()">Início</span>
-<span onclick="filtrarCategoria('Séries')">Séries</span>
-<span onclick="filtrarCategoria('Filme')">Filme</span>
-<span onclick="filtrarCategoria('Anime')">Anime</span>
-<span onclick="abrirGanhos()">💰 Indicar</span>
+<span class="ativo" onclick="inicio()">Início</span>
+<span onclick="cat('Ação')">Ação</span>
+<span onclick="cat('Super Man')">Super Herói</span>
+<span onclick="cat('Gratidão')">Gratidão</span>
+<span onclick="cat('Bean')">Mr Bean</span>
 </div>
 
-<div class="titulo-plug"><h2>🔌 PLUG TV GRATIDÃO</h2><p>Filmes, Séries e Novelas Dublado e Legendado</p></div>
-
-<div class="banner" id="banner">
-<img id="bannerImg" src="https://img.youtube.com/vi/plaU0sa1MQ8/hqdefault.jpg">
-<div class="banner-info"><h1 id="bannerNome">Super Man 1</h1><button class="btn-assistir" onclick="playBanner()">▶ Assistir</button></div>
+<div class="banner">
+<img id="bImg" src="https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg">
+<div class="banner-info"><h1 id="bNome">Vingadores: Ultimato - Trailer Oficial</h1><button class="btn" onclick="playBanner()">▶ VER TRAILER</button></div>
 </div>
+
+<div class="ads">ESPAÇO ADSENSE - Banner 1 (cole seu código aqui depois que aprovar)</div>
 
 <div id="areaPastas"></div>
 <div id="lista"></div>
 
-<div class="admin-bar">
-<button style="background:#00e676;color:#000" onclick="memoria()">📱 MEMÓRIA</button>
-<button style="background:#29b6f6;color:#fff" onclick="abrirArquivo()">📁 VÁRIOS</button>
-<button style="background:#ffca28;color:#000" onclick="addPasta()">+ GÊNERO</button>
-<button style="background:#ff8c00;color:#fff" onclick="salvarFixo()">💾 BACKUP</button>
-<button style="background:#fff;color:#000" onclick="resetar()">🔄 RESET</button>
-<button style="background:#ff006a;color:#fff" onclick="addYT()">+ LINK YT</button>
-</div>
+<div class="ads">ESPAÇO ADSENSE - Banner 2</div>
+
+<footer>
+<b style="color:#fff">GRATIFLIX TV</b> - Trailers oficiais e conteúdo original sobre gratidão.<br>
+Não hospedamos filmes completos. Todos os vídeos são do YouTube oficial e incorporados via YouTube API.<br><br>
+<a href="#" onclick="sobre()">Sobre Nós</a> | <a href="#" onclick="priv()">Política de Privacidade</a> | <a href="#" onclick="termos()">Termos de Uso</a> | <a href="#">Contato: contato@bancogratidao.com.br</a><br><br>
+Conteúdo original © 2026 Banco da Gratidão - Curitiba PR
+</footer>
 
 <div class="bottom">
-<div class="ativo" onclick="voltarInicio()"><div>🏠</div>Início</div>
+<div class="ativo" onclick="inicio()"><div>🏠</div>Início</div>
 <div onclick="document.getElementById('busca').focus()"><div>🔍</div>Buscar</div>
-<div onclick="modoTV()"><div>📺</div>TV</div>
-<div onclick="salvarFixo()"><div>⬇️</div>Baixar</div>
-<div onclick="abrirGanhos()"><div>👤</div>Meu menu</div>
+<div onclick="sobre()"><div>📖</div>Sobre</div>
+<div onclick="priv()"><div>🛡️</div>Privacidade</div>
 </div>
 
 <div id="player">
-<button onclick="fechar()" style="position:absolute;top:10px;left:10px;background:#e50914;color:#fff;border:none;padding:9px 14px;border-radius:20px;z-index:10002;font-weight:800">↩ VOLTAR</button>
-<button onclick="modoTV()" style="position:absolute;top:10px;right:10px;background:#007feb;color:#fff;border:none;padding:9px 14px;border-radius:20px;z-index:10002;font-weight:900">📺 TV</button>
-<iframe id="frame" allowfullscreen allow="autoplay; fullscreen; encrypted-media" referrerpolicy="origin"></iframe>
+<button onclick="fechar()" style="position:absolute;top:12px;left:12px;background:#e50914;color:#fff;border:none;padding:9px 14px;border-radius:20px;z-index:10002;font-weight:800">↩ VOLTAR</button>
+<button onclick="ondeAssistir()" style="position:absolute;top:12px;right:12px;background:#00c851;color:#fff;border:none;padding:9px 14px;border-radius:20px;z-index:10002;font-weight:900">📺 ONDE ASSISTIR</button>
+<iframe id="frame" allowfullscreen allow="autoplay; fullscreen"></iframe>
 </div>
-<div id="modal"><div class="box" id="boxConteudo"></div></div>
-<input type="file" id="pick" accept="video/*" multiple style="display:none">
 
 <script>
-let PASTAS_BASE=[
-{emoji:"🔥",nome:"Ação"},{emoji:"😂",nome:"Comédia"},{emoji:"😱",nome:"Terror"},{emoji:"❤️",nome:"Romance"},{emoji:"📺",nome:"Séries"},{emoji:"💃",nome:"Novelas"},{emoji:"🦸",nome:"Super Man"},{emoji:"🧒",nome:"Turma da Mônica"}
-];
+let PASTAS=[{e:"🦸",n:"Super Man"},{e:"🔥",n:"Ação"},{e:"🥊",n:"Rocky / Rambo"},{e:"😂",n:"Mr Bean"},{e:"⚔️",n:"Cobra Kai"},{e:"❤️",n:"Gratidão"},{e:"🦸",n:"Vingadores"}];
+
+// SÓ TRAILERS OFICIAIS + CONTEÚDO LIBERADO
 let filmesBase=[
-{t:"Super Man 1",i:"https://img.youtube.com/vi/plaU0sa1MQ8/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/plaU0sa1MQ8",pasta:"Super Man"},
-{t:"Super Man 2",i:"https://img.youtube.com/vi/Rw3Tv8WAd1w/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/Rw3Tv8WAd1w",pasta:"Super Man"},
-{t:"Chaves 1",i:"https://img.youtube.com/vi/NdQn3sOGAB4/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/NdQn3sOGAB4",pasta:"Comédia"},
-{t:"Ação 1",i:"https://img.youtube.com/vi/gaPE0HTgAP0/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/gaPE0HTgAP0",pasta:"Ação"},
-{t:"Romance 1",i:"https://img.youtube.com/vi/CuJ1xMVqY0I/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/CuJ1xMVqY0I",pasta:"Romance"},
-{t:"Terror 1",i:"https://img.youtube.com/vi/g-Nyi9dOy6E/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/g-Nyi9dOy6E",pasta:"Terror"},
-{t:"Novelas 1",i:"https://img.youtube.com/vi/BbYLSzrUAwY/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/BbYLSzrUAwY",pasta:"Novelas"},
-{t:"Séries 1",i:"https://img.youtube.com/vi/nul6lTbu3oA/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/nul6lTbu3oA",pasta:"Séries"}
+{t:"Vingadores: Ultimato - Trailer Oficial Marvel",i:"https://img.youtube.com/vi/TcMBFSGVi1c/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/TcMBFSGVi1c",pasta:"Vingadores",onde:"Disney+",licao:"Lição: Trabalho em equipe vence o impossível"},
+{t:"Vingadores: Guerra Infinita - Trailer",i:"https://img.youtube.com/vi/6ZfuNTqbHE8/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/6ZfuNTqbHE8",pasta:"Vingadores",onde:"Disney+",licao:"Lição: Cada escolha tem consequência"},
+{t:"Superman 2025 - Trailer Oficial Warner",i:"https://img.youtube.com/vi/UhVjp48U2Oc/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/UhVjp48U2Oc",pasta:"Super Man",onde:"Max / Cinemas",licao:"Lição: Esperança é o maior poder"},
+{t:"Super Man & Lois - Trailer Oficial",i:"https://img.youtube.com/vi/8V90yIkU0Y4/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/8V90yIkU0Y4",pasta:"Super Man",onde:"Max",licao:"Lição: Ser herói na família também"},
+{t:"Cobra Kai 6 - Trailer Oficial Netflix",i:"https://img.youtube.com/vi/xCwwxNbtKuk/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/xCwwxNbtKuk",pasta:"Cobra Kai",onde:"Netflix",licao:"Lição: Nunca é tarde para recomeçar"},
+{t:"Cobra Kai - O Karate Kid continua",i:"https://img.youtube.com/vi/lkaIYHlZz2E/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/lkaIYHlZz2E",pasta:"Cobra Kai",onde:"Netflix",licao:"Lição: Equilíbrio é tudo"},
+{t:"Rocky Balboa - Trailer Oficial",i:"https://img.youtube.com/vi/8tab8fK2_3w/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/8tab8fK2_3w",pasta:"Rocky / Rambo",onde:"Prime Video",licao:"Lição: Não importa quanto bate, mas quanto aguenta"},
+{t:"Rambo - Até o Fim - Trailer Oficial",i:"https://img.youtube.com/vi/4vWg5yJuWfs/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/4vWg5yJuWfs",pasta:"Rocky / Rambo",onde:"Prime Video",licao:"Lição: Coragem de proteger quem ama"},
+{t:"Mr Bean - Episódio Completo OFICIAL",i:"https://img.youtube.com/vi/hq3yfQnllfQ/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/hq3yfQnllfQ",pasta:"Mr Bean",onde:"YouTube Oficial Mr Bean",licao:"Rir é gratidão"},
+{t:"Mr Bean - A Biblioteca",i:"https://img.youtube.com/vi/0v2xnl6LwMw/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/0v2xnl6LwMw",pasta:"Mr Bean",onde:"YouTube Oficial",licao:"Simplicidade"},
+{t:"Turma da Mônica - Episódio Oficial",i:"https://img.youtube.com/vi/NdQn3sOGAB4/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/NdQn3sOGAB4",pasta:"Mr Bean",onde:"YouTube Oficial Maurício de Sousa",licao:"Amizade"},
+{t:"Como ser grato como o Rocky - Original Gratiflix",i:"https://img.youtube.com/vi/plaU0sa1MQ8/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/plaU0sa1MQ8",pasta:"Gratidão",onde:"Seu canal",licao:"Vídeo original seu - 100% monetizável"},
+{t:"3 Lições de Gratidão dos Vingadores - Original",i:"https://img.youtube.com/vi/Rw3Tv8WAd1w/hqdefault.jpg",l:"https://www.youtube-nocookie.com/embed/Rw3Tv8WAd1w",pasta:"Gratidão",onde:"Seu canal",licao:"Conteúdo original - AdSense ama"},
 ];
-let extras=JSON.parse(localStorage.getItem('grati_extras_final')||'[]');
-let filmes=[...filmesBase,...extras];
-let bannerIdx=0;
-function getID(u){u=u.trim();let id='';if(u.includes('youtu.be/'))id=u.split('youtu.be/')[1];else if(u.includes('v='))id=u.split('v=')[1];else if(u.includes('embed/'))id=u.split('embed/')[1];else id=u;return id.split('?')[0].split('&')[0].split('/')[0].substring(0,11);}
+let filmes=[...filmesBase];
+let idxBanner=0, atual=null;
 function renderPastas(){
-let area=document.getElementById('areaPastas');area.innerHTML='<div class="pastas">'+PASTAS_BASE.map(p=>{
-let qtd=filmes.filter(f=>f.pasta===p.nome).length;
-return `<div class="pasta-card"><div class="lixeira" onclick="delPasta('${p.nome}')">🗑️</div><div style="font-size:24px">${p.emoji}</div><h3>${p.nome}</h3><div class="count">${qtd} vídeos</div><button class="btn-abrir" onclick="abrirPasta('${p.nome}')">ABRIR PASTA</button></div>`;
+let a=document.getElementById('areaPastas');a.innerHTML='<div class="pastas">'+PASTAS.map(p=>{
+let q=filmes.filter(f=>f.pasta===p.n).length;
+return `<div class="pcard"><div style="font-size:28px">${p.e}</div><b>${p.n}</b><div style="font-size:11px;color:#aaa">${q} vídeos</div><button class="btn" style="margin-top:8px;padding:7px 12px;font-size:11px" onclick="cat('${p.n}')">ABRIR PASTA</button></div>`;
 }).join('')+'</div>';
 }
-function renderLista(listaFiltrada=null){
-let listaRender=listaFiltrada||filmes;
-if(listaRender.length){bannerIdx=filmes.indexOf(listaRender[0]);document.getElementById('bannerImg').src=listaRender[0].i;document.getElementById('bannerNome').innerText=listaRender[0].t;}
+function render(lista){
 let c=document.getElementById('lista');c.innerHTML='';
-let grupos=[...new Set(listaRender.map(f=>f.pasta))];
+let grupos=[...new Set(lista.map(f=>f.pasta))];
 grupos.forEach(g=>{
-let lista=listaRender.filter(f=>f.pasta===g);if(!lista.length)return;
-let h=`<div class="row-title"><span>${g}</span><span onclick="abrirPasta('${g}')" style="color:#ffcc00;cursor:pointer"> > </span></div><div class="row">`;
-lista.forEach(f=>{
-let idx=filmes.indexOf(f);
-let nota=(7+Math.random()*2).toFixed(1);
-h+=`<div class="card"><div class="tag">DUB FHD</div><div class="nota">★ ${nota}</div><img src="${f.i}" onclick="play(${idx})"><div class="nome">${f.t}</div><div class="botoes"><span onclick="editar(${idx})">✏️</span><span onclick="compartilhar(${idx})">📤</span><span onclick="delFilme(${idx})">🗑️</span></div></div>`;
-});h+=`</div>`;c.innerHTML+=h;
+let l=lista.filter(f=>f.pasta===g);c.innerHTML+=`<div class="row-title"><span>${g}</span></div><div class="row">`+l.map(f=>{
+let i=filmes.indexOf(f);
+return `<div class="card"><div class="tag">OFICIAL</div><img src="${f.i}" onclick="play(${i})"><div class="nome">${f.t}</div><div style="padding:4px 6px;font-size:9px;color:#f5c518">${f.licao}</div></div>`;
+}).join('')+`</div>`;
 });
 }
-function abrirPasta(nome){document.getElementById('areaPastas').style.display='none';renderLista(filmes.filter(f=>f.pasta===nome));window.scrollTo(0,350);}
-function voltarInicio(){document.getElementById('areaPastas').style.display='block';renderPastas();renderLista();document.getElementById('busca').value='';}
-function play(i){document.getElementById('player').style.display='block';let base=filmes[i].l;if(base.startsWith('blob:')||base.startsWith('http')&&!base.includes('youtube')){document.getElementById('frame').src=base;return;}if(base.includes('youtube.com'))base=base.replace('www.youtube.com','www.youtube-nocookie.com');let final=base+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&fs=1&origin='+location.origin;document.getElementById('frame').src=final;}
-function playBanner(){play(bannerIdx);}function fechar(){document.getElementById('player').style.display='none';document.getElementById('frame').src='';}
-function modoTV(){let f=document.getElementById('frame');if(!f.src)return alert('Abra um filme primeiro!');alert('📺 TV BOX: Digite na TV Box o link:\n'+location.href+'\n\n📺 TV SMART: Use Smart View / Transmitir do celular');}
-function filtrar(){let q=document.getElementById('busca').value.toLowerCase();if(!q){voltarInicio();return;}document.getElementById('areaPastas').style.display='none';renderLista(filmes.filter(x=>x.t.toLowerCase().includes(q)||x.pasta.toLowerCase().includes(q)));}
-function filtrarCategoria(cat){if(!cat){voltarInicio();return;}document.getElementById('areaPastas').style.display='none';renderLista(filmes.filter(f=>f.pasta.toLowerCase().includes(cat.toLowerCase())||f.t.toLowerCase().includes(cat.toLowerCase())));}
-function editar(i){let n=prompt('✏️ Mudar nome:',filmes[i].t);if(n&&n.trim()){filmes[i].t=n.trim();salvar();renderPastas();renderLista();}}
-function delFilme(i){if(confirm('🗑️ Apagar "'+filmes[i].t+'"?')){filmes.splice(i,1);salvar();renderPastas();renderLista();}}
-function delPasta(nome){if(confirm('Apagar pasta "'+nome+'" e todos vídeos dela?')){filmes=filmes.filter(f=>f.pasta!==nome);PASTAS_BASE=PASTAS_BASE.filter(p=>p.nome!==nome);salvar();voltarInicio();}}
-function compartilhar(i){let link=filmes[i].l;if(navigator.share){navigator.share({title:filmes[i].t,url:link});}else{navigator.clipboard.writeText(link);alert('📤 Copiado');}}
-function compartilharSite(){if(navigator.share){navigator.share({title:'GRATIFLIX',url:location.href});}else{prompt('Copie:',location.href);}}
-function convidar(){let msg=`👋 Entra no meu GRATIFLIX - Filmes grátis igual Nuvix!\n${location.href}`;if(navigator.share){navigator.share({title:'Convite',text:msg,url:location.href});}else{prompt('Copie:',msg);}}
-function addYT(){let link=prompt('Cole link YouTube:');if(!link)return;let id=getID(link);let nome=prompt('Nome:')||'Filme';let pasta=prompt('Pasta? (Ação, Comédia...)')||'Geral';let obj={t:nome,i:`https://img.youtube.com/vi/${id}/hqdefault.jpg`,l:`https://www.youtube-nocookie.com/embed/${id}`,pasta:pasta};filmes.push(obj);if(!PASTAS_BASE.find(p=>p.nome===pasta))PASTAS_BASE.push({emoji:"📁",nome:pasta});salvar();voltarInicio();}
-function addPasta(){let n=prompt('Nome da pasta?');let e=prompt('Emoji? ex: 🔥')||'📁';if(n){PASTAS_BASE.push({emoji:e,nome:n});voltarInicio();}}
-function memoria(){document.getElementById('pick').click();}
-document.getElementById('pick').onchange=(e)=>{
-[...e.target.files].forEach(file=>{
-let url=URL.createObjectURL(file);let pasta=prompt(`Pasta para "${file.name}"?`)||'Memória';filmes.push({t:file.name,i:'https://img.youtube.com/vi/plaU0sa1MQ8/hqdefault.jpg',l:url,pasta:pasta});if(!PASTAS_BASE.find(p=>p.nome===pasta))PASTAS_BASE.push({emoji:"📱",nome:pasta});});
-salvar();voltarInicio();
-};
-function abrirArquivo(){document.getElementById('modal').style.display='flex';document.getElementById('boxConteudo').innerHTML=`<h2>📁 VÁRIOS LINKS</h2><input id="pBonito" placeholder="Nome da pasta (ex: Ação)"><textarea id="pLinks" placeholder="Cole links YouTube, um por linha"></textarea><div style="display:flex;gap:6px"><button style="flex:1;padding:10px;background:#333;color:#fff;border:none;border-radius:8px" onclick="fecharModal()">Cancelar</button><button style="flex:1;padding:10px;background:#ffcc00;color:#000;border:none;border-radius:8px;font-weight:900" onclick="gerarTemp()">GERAR</button></div><div id="resTemp" style="display:none;margin-top:10px"><textarea id="codTemp" style="height:120px;background:#000;color:#0f0"></textarea><button style="width:100%;padding:10px;background:#00c851;color:#fff;border:none;border-radius:8px;margin-top:6px" onclick="addTemp()">Adicionar</button></div>`;}
-let temp=[];function gerarTemp(){let bonito=document.getElementById('pBonito').value.trim()||'Geral';let linhas=document.getElementById('pLinks').value.trim().split('\n');temp=[];let cod='';linhas.forEach((ln,i)=>{let id=getID(ln);if(id.length>=10){let o={t:`${bonito} ${i+1}`,i:`https://img.youtube.com/vi/${id}/hqdefault.jpg`,l:`https://www.youtube-nocookie.com/embed/${id}`,pasta:bonito};temp.push(o);}});if(temp.length){filmes=filmes.concat(temp);if(!PASTAS_BASE.find(p=>p.nome===bonito))PASTAS_BASE.push({emoji:"📁",nome:bonito});salvar();fecharModal();voltarInicio();}}
-function addTemp(){}
-function fecharModal(){document.getElementById('modal').style.display='none';}
-function salvar(){extras=filmes.filter(f=>!filmesBase.find(b=>b.l===f.l));localStorage.setItem('grati_extras_final',JSON.stringify(extras));}
-function salvarFixo(){let txt='let filmesBase=[\n';filmes.forEach(f=>{txt+=`{t:"${f.t}",i:"${f.i}",l:"${f.l}",pasta:"${f.pasta}"},\n`;});txt+='];';document.getElementById('modal').style.display='flex';document.getElementById('boxConteudo').innerHTML=`<h3>💾 BACKUP FIXO</h3><p style="font-size:11px;color:#aaa">Copie e cole no código pra ficar fixo</p><textarea style="height:300px;background:#000;color:#0f0;font-size:10px">${txt}</textarea><button style="width:100%;padding:10px;background:#e50914;color:#fff;border:none;border-radius:8px;margin-top:8px" onclick="fecharModal()">Fechar</button>`;}
-function resetar(){if(confirm('🔄 Apagar tudo e voltar ao início?')){localStorage.clear();location.reload();}}
-function abrirGanhos(){document.getElementById('modal').style.display='flex';document.getElementById('boxConteudo').innerHTML=`<div style="text-align:center"><h2 style="color:#f5c518">Ganhe Dinheiro Convidando</h2><div style="background:#0f1115;border:1px solid #f5c518;border-radius:12px;padding:20px;margin:15px 0"><h3>Compartilhar o APP</h3><p>Novos usuários receberão</p><h1 style="color:#f5c518;font-size:36px">R$ 2,69</h1><button onclick="convidar()" style="width:100%;margin-top:15px;padding:14px;background:linear-gradient(#ffb84d,#ff4d00);border:none;border-radius:30px;font-weight:900;color:#fff">Compartilhar</button></div><button onclick="fecharModal()" style="margin-top:10px;padding:8px 20px;background:#333;color:#fff;border:none;border-radius:20px">Fechar</button></div>`;}
-renderPastas();renderLista();
+function play(i){atual=filmes[i];document.getElementById('player').style.display='block';document.getElementById('frame').src=filmes[i].l+'?autoplay=1&rel=0&modestbranding=1&origin='+location.origin;document.getElementById('bImg').src=filmes[i].i;document.getElementById('bNome').innerText=filmes[i].t;idxBanner=i;}
+function playBanner(){play(idxBanner);}function fechar(){document.getElementById('player').style.display='none';document.getElementById('frame').src='';}
+function ondeAssistir(){if(!atual)return;alert('📺 ONDE ASSISTIR OFICIAL:\n\n'+atual.t+'\n\nPlataforma: '+atual.onde+'\n\nIsso é legal e AdSense aprova porque você não hospeda pirata, só indica onde assistir.');}
+function inicio(){render(filmes);renderPastas();document.getElementById('bImg').src=filmes[0].i;document.getElementById('bNome').innerText=filmes[0].t;}
+function cat(n){render(filmes.filter(f=>f.pasta===n));}
+function filtrar(){let q=document.getElementById('busca').value.toLowerCase();if(!q){inicio();return;}render(filmes.filter(f=>f.t.toLowerCase().includes(q)));}
+function sobre(){alert('SOBRE NÓS:\n\nGRATIFLIX é um projeto do Banco da Gratidão (Curitiba PR) que reúne trailers oficiais e ensina lições de gratidão inspiradas em grandes histórias do cinema. Não hospedamos filmes piratas.');}
+function priv(){alert('POLÍTICA DE PRIVACIDADE:\n\nUsamos YouTube API. Não coletamos dados. Anúncios do AdSense podem usar cookies. Contato: contato@bancogratidao.com.br');}
+function termos(){alert('TERMOS:\n\nTodo conteúdo de vídeo é incorporado do YouTube oficial via youtube-nocookie.com. Direitos pertencem aos estúdios. Nosso conteúdo original são as lições de gratidão.');}
+inicio();renderPastas();render(filmes);
 </script>
 </body>
 </html>
